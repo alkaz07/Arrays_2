@@ -12,8 +12,7 @@ public class WorkWithArrays2 {
     //6) найти, сколько раз в массиве встречается число x
     //7) отфильтровать массив, сделав новый массив, содержащий элементы исходного массива,
     //   значения которых в интервале от p до q
-    //
-    //8) найти значение элемента массива, максимально близкое к числу x
+     //8) найти значение элемента массива, максимально близкое к числу x
 
 
     public static void main(String[] args) {
@@ -37,6 +36,10 @@ public class WorkWithArrays2 {
         int[] fmas = filterArray(mas, p, q);
         outputArray(fmas);
 
+        //8
+        System.out.println("введите x");
+        x = scanner.nextInt();
+        System.out.println("ближайшее к x " + findNearestToX(mas, x));
     }
 
     //ввести массив произвольной длины
@@ -134,9 +137,11 @@ public class WorkWithArrays2 {
     static int findNearestToX(int[] mas, int x){
         //цикл, в котором вычитается x - значение из массива, и разница сравнивается
         //с запомненным значением
-        for (int i = 0; i < mas.length; i++) {
-            int d = x - mas[i];
+        int result = mas[0];
+        for (int i = 1; i < mas.length; i++) {
+            if ( Math.abs( x - mas[i]) < Math.abs(x - result) )
+                result = mas[i];
         }
-        return 0;//заглушка
+        return result;
     }
 }
