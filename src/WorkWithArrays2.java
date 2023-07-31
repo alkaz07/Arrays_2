@@ -1,4 +1,5 @@
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -40,6 +41,10 @@ public class WorkWithArrays2 {
         System.out.println("введите x");
         x = scanner.nextInt();
         System.out.println("ближайшее к x " + findNearestToX(mas, x));
+
+        //Arrays.sort(mas);
+        bubbleSort(mas);
+        outputArray(mas);
     }
 
     //ввести массив произвольной длины
@@ -143,5 +148,18 @@ public class WorkWithArrays2 {
                 result = mas[i];
         }
         return result;
+    }
+    static void bubbleSort(int[] mas)
+    {
+        for (int i = 0; i < mas.length -1; i++) {
+            for (int j = 0; j <mas.length - i - 1; j++) {
+                if(mas[j] > mas[j+1])
+                {
+                    int t = mas[j];
+                    mas[j] = mas[j+1];
+                    mas[j+1] = t;
+                }
+            }
+        }
     }
 }
