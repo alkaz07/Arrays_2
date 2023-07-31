@@ -21,7 +21,7 @@ public class WorkWithArrays2 {
         //1
         int[] mas = generateRandomArray(dlina);
         outputArray(mas);
-        //2
+        //
         System.out.println("номер мин элемента " + getMinNum(mas));
         //3
         System.out.println("диапазон значений " + getValueRange(mas));
@@ -129,5 +129,14 @@ public class WorkWithArrays2 {
             }
         }
         return result;
+    }
+
+    static int findNearestToX(int[] mas, int x){
+        //цикл, в котором вычитается x - значение из массива, и разница сравнивается
+        //с запомненным значением
+        for (int i = 0; i < mas.length; i++) {
+            int d = x - mas[i];
+        }
+        return 0;//заглушка
     }
 }
